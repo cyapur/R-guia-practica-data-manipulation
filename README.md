@@ -81,7 +81,7 @@ df[df$Period == 3 | df$Project_Performance > 0.5,c("Employee", "Boss")] # Selecc
 ```
 
 
-SELECT, FILTER, ARRANGE
+# SELECT, FILTER, ARRANGE
 ```{r}
 select(df, Period, Boss, Employee) # Selecciona las columnas Period, Boss, y Employee del dataframe df
 select(df, idProject:Employee) # Selecciona las columnas desde idProject hasta Employee
