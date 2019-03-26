@@ -82,7 +82,7 @@ df[df$Period == 3 | df$Project_Performance > 0.5,c("Employee", "Boss")] # Selecc
 
 
 # SELECT, FILTER, ARRANGE
-```{r}
+```r
 select(df, Period, Boss, Employee) # Selecciona las columnas Period, Boss, y Employee del dataframe df
 select(df, idProject:Employee) # Selecciona las columnas desde idProject hasta Employee
 select(df, -Period) # Selecciona todas las columnas menos la columna Period
@@ -132,7 +132,7 @@ summarise(group_by(df, Employee, Boss),Promedio = mean(Project_Performance)) # P
 ```
 
 Pipe Operator (`%>%`) inserta en el primer argumento de la función a seguir, el resultado anterior. Matemáticamente f(x) es lo mismo que `x %>% f`, o g(f(x)) es lo mismo que `x %>% f() %>% g()`
-```{r}
+```r
 df %>%
   group_by(Employee) %>%
   summarise(Promedio = mean(Project_Performance)) # Promedio por empleado
