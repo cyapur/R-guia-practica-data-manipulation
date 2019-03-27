@@ -244,33 +244,36 @@ Documentación útil adicional: `?round` `?n`
 - El tamaño de cada bono es ponderado por el tamaño total de todos los proyectos, cuyo Project_Performance sea mayor a 0%, asociados a todos los empleados y jefes que recibirán bono. 
 - Lo máximo que puede ganar un empleado por período es 3MM y un jefe es 5MM. 
 
-Calcule (a) el bono más grande de los jefes, (b) el bono más pequeño de los empleados, (c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados, y (d) el excedente de los 100MM a repartir aproximado a la unidad de mil. 
+Calcule: 
+(a) el bono más grande de los jefes
+(b) el bono más pequeño de los empleados
+(c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados
+(d) el excedente de los 100MM a repartir aproximado a la unidad de mil. 
 
 Consideraciones:
 Si un proyecto tiene un tamaño de 100, tiene un Project_Performance mayor a 0%, y el jefe y empleado asociados a dicho proyecto recibirán bono por dicho proyecto, al total del ponderado se le suma 200 (100 por el empleado y 100 por el jefe).
 
-Documentación adicional útil
-?merge
+Documentación adicional útil: ?merge
 
 
 #### (a):
 
 |Boss | Bono|
 |:---:|:---:|
-|C|16680648|
+|C|16.680.648|
 
 #### (b):
 
 |Employee|Bono |
 |:---:|:---:|
-|2|1475219|	
+|2|1.475.219|	
 
 #### (c):
 |Diferencia|
 |:---:|
-|-5769712|
+|-5.769.712|
 
 #### (d):
 |Excedente|
 |:---:|
-|10869000|
+|10.869.000|
