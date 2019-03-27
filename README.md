@@ -191,11 +191,11 @@ Documentación útil adicional: `?round` `?n`
 | C     |     23 |
 
 #### Ejercicio 7:
-|  Boss | n_Count| p_Count|
-| :---: |   :---:|:---:|
-| A     |     44 |   0.44|
-| B     |     33 |   0.33|
-| C     |     23 |   0.23|
+|  Boss | p_Count|
+| :---: |:---:|
+| A     |   0.44|
+| B     |   0.33|
+| C     |   0.23|
 
 #### Ejercicio 8:
 |Employee |Employee_Performance|
