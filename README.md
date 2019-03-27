@@ -165,11 +165,12 @@ Documentación útil:
 
 Resultados esperados:
 1)
- | Boss  |Promedio|
- | --- |   ---|
-1| A     |    0.03|
-2| B     |    0   |
-3| C     |    0.11|
+
+| Boss  |Promedio|
+| --- |   ---|
+| A     |    0.03|
+| B     |    0   |
+| C     |    0.11|
   
 2)
   Period Promedio
