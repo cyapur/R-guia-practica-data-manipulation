@@ -246,16 +246,16 @@ En los últimos años la empresa ha tenido significativas ganancias, por lo que 
 
 ### Calcule: 
 
-..(a) el bono más grande de los jefes.
+**(a)** el bono más grande de los jefes.
 
-⋅⋅(b) el bono más pequeño de los empleados.
+**(b)** el bono más pequeño de los empleados.
 
-⋅⋅(c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados.⋅⋅
-⋅⋅(d) el excedente de los 100MM a repartir aproximado a la unidad de mil. ⋅⋅
+**(c)** la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados.
+
+**(d)** el excedente de los 100MM a repartir aproximado a la unidad de mil.
 
 
-Consideraciones:
-Si un proyecto tiene un tamaño de 100, tiene un Project_Performance mayor a 0%, y el jefe y empleado asociados a dicho proyecto recibirán bono por dicho proyecto, al total del ponderado se le suma 200 (100 por el empleado y 100 por el jefe).
+**Consideraciones:** Si un proyecto tiene un tamaño de 100, tiene un Project_Performance mayor a 0%, y el jefe y empleado asociados a dicho proyecto recibirán bono por dicho proyecto, al total del ponderado se le suma 200 (100 por el empleado y 100 por el jefe).
 
 Documentación adicional útil: `?merge`
 
