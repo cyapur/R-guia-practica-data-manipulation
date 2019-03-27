@@ -246,8 +246,8 @@ En los últimos años la empresa ha tenido significativas ganancias, por lo que 
 
 ### Calcule: 
 
-⋅⋅⋅(a) el bono más grande de los jefes
-⋅⋅⋅(b) el bono más pequeño de los empleados
+⋅⋅⋅(a) el bono más grande de los jefes.⋅⋅
+⋅⋅⋅(b) el bono más pequeño de los empleados.⋅⋅
 ⋅⋅⋅(c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados
 ⋅⋅⋅(d) el excedente de los 100MM a repartir aproximado a la unidad de mil. 
 
