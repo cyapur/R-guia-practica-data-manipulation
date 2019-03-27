@@ -12,7 +12,7 @@ str(df) # Muestra la estructura de la base
 ```
 **Estructura general de la base**
 * La base tiene 100 proyectos con tamaños diferentes, cada proyecto está asociado a un empleado, y cada empleado está asociado a un único jefe.
-* Los 100 proyectos se realizaron dentro de un total de 10 períodos.
+* Los 100 proyectos se realizaron dentro de un total de 5 períodos.
 * Cada proyecto puede ser de tres tipos: *X*, *Y*, o *Z*.
 * Existen 12 empleados y 3 jefes (*A*, *B*, *C*)
 
