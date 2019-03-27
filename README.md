@@ -163,8 +163,9 @@ Documentación útil:
 `?n`
 `?summarise`
 
-Resultados esperados:
-1)
+# Resultados esperados
+
+#### Ejercicio 1:
 
 | Boss  |Promedio|
 | :---: |   :---:|
@@ -172,7 +173,7 @@ Resultados esperados:
 | B     |    0   |
 | C     |    0.11|
   
-2)
+#### Ejercicio 2:
 |  Period| Promedio|
 | :---: |   :---:|
 |      1|     0.14|
@@ -181,37 +182,37 @@ Resultados esperados:
 |      4|    -0.06|
 |      5|    -0.05|
 
-3)
+#### Ejercicio 3:
 
  | Promedio|
  |:---:|
 |0.15|
 
-4)
+#### Ejercicio 4:
   |Promedio|
   |:---:|
 | -0.01|
 
-5)
+#### Ejercicio 5:
   |Promedio|
 |:---:|
 |NaN|
 
-6)
+#### Ejercicio 6:
 |  Boss | n_Count|
 | :---: |   :---:|
 | A     |     44 |
 | B     |     33 |
 | C     |     23 |
 
-7)
+#### Ejercicio 7:
 |  Boss | n_Count| p_Count|
 | :---: |   :---:|:---:|
 | A     |     44 |   0.44|
 | B     |     33 |   0.33|
 | C     |     23 |   0.23|
 
-8)
+#### Ejercicio 8:
 |Employee |Employee_Performance|
 |:---:|:---:|
 |        1|                 0.17|
@@ -227,14 +228,14 @@ Resultados esperados:
 |       11|                 0.1 |
 |       12|                 0.4 |
 
-9)
+#### Ejercicio 9:
   |Boss|  Boss_Performance|
 |:---:|:---:|
 |A               |  0.05|
 |B               | -0.05|
 |C               |  0.12|
 
-10)
+#### Ejercicio 10:
 |  Boss | Boss_Leadership|
 |:---:|:---:|
 | A                0.02|
