@@ -3,20 +3,7 @@
 Este tutorial asume que el usuario maneja conocimientos básicos de programación.
 
 ```R
-install.packages("tidyverse") # Instala los paquetes necesarios
-library("tidyverse") # Se abren los paquetes
-set.seed(100)
-
-# Creamos el dataframe o base de datos
-df <- merge(data.frame(idProject = 1:100,
-                       ProjectType = sample(c("X", "Y", "Z"),100,replace=TRUE),
-                 Period = sample(1:5, 100, replace=TRUE),
-                 Employee = sample(1:12, 100, replace=TRUE),
-                 Project_Performance = sample(-100:100,100,replace=TRUE)/100,
-                 Project_Size = sample(100:1000,100, replace=TRUE)),
-            data.frame(Boss = c("A", "A", "A","A", "A", "B","B", "B", "B","C", "C", "C"),
-                Employee = c(1,2,3,4,5,6,7,8,9,10,11,12), stringsAsFactors = FALSE),
-            by = "Employee", all.x=TRUE)
+df <- read.csv("df.csv", sep=";", dec=",")
 
 head(df,5) # head() Selecciona las primeras 5 filas
 str(df) # Muestra la estructura de la base
@@ -159,9 +146,7 @@ df %>%
 9) El desempeño de cada jefe, el cual está definido como el promedio ponderado del tamaño de los proyectos realizados asociados a sus empleados, por su nota respectiva
 10) El nivel de liderazgo de cada jefe, el cual está definido como el promedio del desempeño de sus empleados asociados 
 
-Documentación adicional útil:
-`?round`
-`?n`
+Documentación útil adicional: `?round` `?n`
 
 ### Resultados esperados
 
@@ -238,6 +223,6 @@ Documentación adicional útil:
 #### Ejercicio 10:
 |  Boss | Boss_Leadership|
 |:---:|:---:|
-| A                0.02|
-| B               -0.04|
-| C                0.14|
+| A        |        0.02|
+| B        |       -0.04|
+| C        |        0.14|
