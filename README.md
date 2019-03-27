@@ -3,6 +3,8 @@
 Este tutorial asume que el usuario maneja conocimientos básicos de programación.
 
 ```R
+#install.packages("tidyverse")
+library("tidyverse")
 df <- read.csv("df.csv", sep=";", dec=",")
 
 head(df,5) # Selecciona las primeras 5 filas
@@ -153,11 +155,6 @@ df %>%
 10) El nivel de liderazgo de cada jefe, el cual está definido como el promedio del desempeño de sus empleados asociados 
 
 Documentación útil adicional: `?round` `?n`
-
-
-**Problema 1)** La empresa tiene 100 millones de pesos para bonos. Por cada período que el desempeño de un jefe o de un empleado supera el 0% se le da un bono. El tamaño de dicho bono es ponderado por el tamaño total de los proyectos asociados a dicho jefe/empleado cuyo Project_Performance supera el 0%. Calcule la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados. El máximo que puede ganar un empleado es 10MM y un jefe es 20MM.
-
-**Problema 2)** El proyecto X genera 2MM de ingresos, el proyecto Y genera 1MM y el proyecto Z genera 0.5MM, y todo proyecto tiene un costo fijo de 0.2MM. Existe una penalización/beneficio por proyecto que depende de su performance. Dicha penalización/beneficio es Ingreso*(1+Project_Performance). Considerando los gastos del problema 1, y los ingresos de este problema, cuál es la ganancia/pérdida total por jefe?
 
 
 ### Resultados esperados
