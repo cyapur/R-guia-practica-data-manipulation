@@ -239,16 +239,16 @@ Documentación útil adicional: `?round` `?n`
 
 # Problema
 
-1) En los últimos años la empresa ha tenido significativas ganancias, por lo que ha decidido repartir 100 millones de pesos para bonos de forma retrospectiva a jefes y empleados de forma independiente, según las siguientes condiciones:
+En los últimos años la empresa ha tenido significativas ganancias, por lo que ha decidido repartir 100 millones de pesos para bonos de forma retrospectiva a jefes y empleados de forma independiente, según las siguientes condiciones:
 - Por cada período que el desempeño de un jefe o de un empleado supera el 0%, a dicho jefe o empleado se le dará un bono. 
 - El tamaño de cada bono es ponderado por el tamaño total de todos los proyectos, cuyo Project_Performance sea mayor a 0%, asociados a todos los empleados y jefes que recibirán bono. 
 - Lo máximo que puede ganar un empleado por período es 3MM y un jefe es 5MM. 
 
-Calcule: 
-(a) el bono más grande de los jefes
-(b) el bono más pequeño de los empleados
-(c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados
-(d) el excedente de los 100MM a repartir aproximado a la unidad de mil. 
+### Calcule: 
+⋅⋅⋅(a) el bono más grande de los jefes
+⋅⋅⋅(b) el bono más pequeño de los empleados
+⋅⋅⋅(c) la diferencia total entre los bonos pagados a los jefes y los bonos pagados a los empleados
+⋅⋅⋅(d) el excedente de los 100MM a repartir aproximado a la unidad de mil. 
 
 Consideraciones:
 Si un proyecto tiene un tamaño de 100, tiene un Project_Performance mayor a 0%, y el jefe y empleado asociados a dicho proyecto recibirán bono por dicho proyecto, al total del ponderado se le suma 200 (100 por el empleado y 100 por el jefe).
