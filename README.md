@@ -182,57 +182,61 @@ Resultados esperados:
 |      5|    -0.05|
 
 3)
-  Promedio
-1     0.15
+
+ | Promedio|
+ |:---:|
+|0.15|
 
 4)
-  Promedio
-1    -0.01
+  |Promedio|
+  |:---:|
+| -0.01|
 
 5)
-  Promedio
-1      NaN
+  |Promedio|
+|:---:|
+|NaN|
 
 6)
-  Boss  n_Count
-  <chr>   <int>
-1 A          44
-2 B          33
-3 C          23
+|  Boss | n_Count|
+| :---: |   :---:|
+| A     |     44 |
+| B     |     33 |
+| C     |     23 |
 
 7)
-  Boss  n_Count p_Count
-  <chr>   <int>   <dbl>
-1 A          44    0.44
-2 B          33    0.33
-3 C          23    0.23
+|  Boss | n_Count| p_Count|
+| :---: |   :---:|:---:|
+| A     |     44 |   0.44|
+| B     |     33 |   0.33|
+| C     |     23 |   0.23|
 
 8)
-   Employee Employee_Performance
-      <int>                <dbl>
- 1        1                 0.17
- 2        2                -0.07
- 3        3                 0   
- 4        4                 0.17
- 5        5                -0.17
- 6        6                -0.04
- 7        7                -0.07
- 8        8                 0.19
- 9        9                -0.25
-10       10                -0.09
-11       11                 0.1 
-12       12                 0.4 
+   |Employee |Employee_Performance|
+ |:---:|:---:|
+|        1|                 0.17|
+|        2|                -0.07|
+|        3|                 0   |
+|        4|                 0.17|
+|        5|                -0.17|
+|        6|                -0.04|
+|        7|                -0.07|
+|        8|                 0.19|
+|        9|                -0.25|
+|       10|                -0.09|
+|       11|                 0.1 |
+|       12|                 0.4 |
 
 9)
-  Boss  Boss_Performance
-  <chr>            <dbl>
-1 A                 0.05
-2 B                -0.05
-3 C                 0.12
+  |Boss|  Boss_Performance|
+|:---:|:---:|
+|A               |  0.05|
+|B               | -0.05|
+|C               |  0.12|
 
 10)
-  Boss  Boss_Leadership
-  <chr>           <dbl>
-1 A                0.02
-2 B               -0.04
-3 C                0.14
+|  Boss  Boss_Leadership|
+|:---:|:---:|
+| A                0.02|
+| B               -0.04|
+| C                0.14|
