@@ -5,7 +5,7 @@ Este tutorial asume que el usuario maneja conocimientos básicos de programació
 ```R
 df <- read.csv("df.csv", sep=";", dec=",")
 
-head(df,5) # head() Selecciona las primeras 5 filas
+head(df,5) # Selecciona las primeras 5 filas
 str(df) # Muestra la estructura de la base
 ```
 
