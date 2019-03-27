@@ -212,8 +212,8 @@ Resultados esperados:
 | C     |     23 |   0.23|
 
 8)
-   |Employee |Employee_Performance|
- |:---:|:---:|
+|Employee |Employee_Performance|
+|:---:|:---:|
 |        1|                 0.17|
 |        2|                -0.07|
 |        3|                 0   |
@@ -235,7 +235,7 @@ Resultados esperados:
 |C               |  0.12|
 
 10)
-|  Boss  Boss_Leadership|
+|  Boss | Boss_Leadership|
 |:---:|:---:|
 | A                0.02|
 | B               -0.04|
