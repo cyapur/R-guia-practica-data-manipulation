@@ -8,6 +8,12 @@ df <- read.csv("df.csv", sep=";", dec=",")
 head(df,5) # Selecciona las primeras 5 filas
 str(df) # Muestra la estructura de la base
 ```
+**Estructura general de la base**
+* La base tiene 100 proyectos, cada proyecto está asociado a un empleado, y cada empleado está asociado a un único jefe.
+* Los 10 proyectos se realizaron dentro de un total de 10 períodos.
+* Cada proyecto puede ser de tres tipos: *X*, *Y*, o *Z*.
+* Existen 12 empleados y 3 jefes (*A*, *B*, *C*)
+
 
 **Funciones básicas para la manipulación de datos**
 
