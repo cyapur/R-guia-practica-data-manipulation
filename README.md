@@ -146,7 +146,8 @@ df %>%
 ```
 
 
-Ejercicios. Calcular:
+# Ejercicios
+
 1) La media simple de cada proyecto, por jefe
 2) La media simple de cada proyecto, por período
 3) La media simple de los proyectos tipo X
@@ -158,12 +159,11 @@ Ejercicios. Calcular:
 9) El desempeño de cada jefe, el cual está definido como el promedio ponderado del tamaño de los proyectos realizados asociados a sus empleados, por su nota respectiva
 10) El nivel de liderazgo de cada jefe, el cual está definido como el promedio del desempeño de sus empleados asociados 
 
-Documentación útil:
+Documentación adicional útil:
 `?round`
 `?n`
-`?summarise`
 
-# Resultados esperados
+### Resultados esperados
 
 #### Ejercicio 1:
 
