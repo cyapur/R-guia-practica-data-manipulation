@@ -1,23 +1,71 @@
-# R - Data Manipulation - Guía práctica
+# R - Guía Básica
+# R-Basic-Guide
 
-Este tutorial asume que el usuario maneja conocimientos básicos de programación.
+## Índice
+1. Conceptos básicos
+2. Funciones básicas
+3. Ejercicios prácticos
 
+## 1. Conceptos básicos
+
+### Data Structure
+
+En R todo es un objeto. Un objeto determinado tiene una estructura de datos determinada. La estructura de datos de cualquier lenguaje de programación define cómo se pueden representar los datos en dicho lenguaje de programación. En R, los 6 tipos básicos de estructuras de datos se pueden organizar en si son homogéneos (todos los datos deben ser del mismo tipo) o heterogéneos (los datos pueden ser de distintos tipos):
+
+|Dimensionalidad|Homogéneos|Heterogéneos|
+|:---:|:---:|:---:|
+|1|Atomic vector|List|
+|2|Matrix|Data frame|
+|n|Array|-|
+
+Los tipos de datos más comunes son:
+- logical: TRUE FALSE
+- integer: Números enteros
+- double: Números reales
+- character: Strings o texto
+- factor: Usado para datos categóricos
+
+Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. Los vectores atómicos se definen con `c()` del acrónimo *concatenate*. Una lista se define por la función `list()`. Un dataframe es una lista de vectores atómicos de la misma cantidad de componentes. Un array es un objeto multidimensional de n dimensiones, una matriz es un array de dos dimensiones, y un vector atómico es una array de una dimensión. Un objeto atómico es aquel que tiene un solo tipo de dato.
+
+Con lo que se trabajará en esta guía serán dataframe y vectores.
+
+Para empezar, utilizaremos la base interna `mtcars`.
+```r
+str(mtcars) # Muestra la estructura de la base
+head(mtcars) # Primeras 6 filas de la base
+mean(mtcars$mpg) # 20.09 
+sum(mtcars$cyl) # 6.19
+max(c(1,2,3,4,5) # 5
+min(c(1,2,3,4,5) # 1
+mean(c(1,2,NA,4,5)) # NA
+mean(c(1,2,NA,4,5), na.rm=TRUE) # 3
+```
+`NA` significa *Not Available*, lo que también es interpretado como un *missing value* o valores vacíos. Por regla general, en R cualquier cálculo determinado que uno quiera hacer sobre un conjunto de datos determinados, dará como resultado `NA` si es que tiene al menos un *missing value* dentro de los cálculos. Para ignorar los `NAs` hay que agregar el argumento `na.rm=TRUE` el cual significaría *NA remove = TRUE*.
+
+En el caso de realizar cálculos y no funcione el argumento `na.rm=TRUE` para ignorar los *missing values*, se recomienda ir a la documentación:
+```r
+help(mean) # Va directamente a la documentación de la función mean(), equivale a ?mean
+help.search(mean) # Realiza una búsqueda con con dicho string, equivale a ??mean
+```
+
+## 2.Funciones básicas para la manipulación de datos
+
+Para aprender a manipular datos, comenzaremos con lo siguiente:
 ```R
-#install.packages("tidyverse")
-library("tidyverse")
-df <- read.csv("df.csv", sep=";", dec=",")
+install.packages("tidyverse") # Instalamos el paquete tidyverse
+library("tidyverse") # Abrimos el paquete
+df <- read.csv("df.csv", sep=";", dec=",") # Leemos la base de datos y se lo asignamos a 'df'
 
 head(df,5) # Selecciona las primeras 5 filas
 str(df) # Muestra la estructura de la base
 ```
+
 **Estructura general de la base**
 * La base tiene 100 proyectos con tamaños diferentes, cada proyecto está asociado a un empleado, y cada empleado está asociado a un único jefe.
 * Los 100 proyectos se realizaron dentro de un total de 5 períodos.
 * Cada proyecto puede ser de tres tipos: *X*, *Y*, o *Z*.
 * Existen 12 empleados y 3 jefes (*A*, *B*, *C*)
 
-
-**Funciones básicas para la manipulación de datos**
 
 |Función | ¿Qué hace?|
 | :---:|:---:|
@@ -37,7 +85,7 @@ Con el fin de entender cómo aprender y entender cómo funciona cada función de
 |`??select()`| Realiza un buscar con la palabra o función a seguir de los signos de interrogación|
 
 
-# Slicing, filtrar, y seleccionar
+### SLICING, FILTRAR Y SELECCIONAR
 
 Slicing es una forma de seleccionar/filtrar un dataframe según los valores/condiciones que uno requiera, determinado por el/los índice/s de filas y columnas separados por una coma. Por ejemplo.
 ```r
@@ -76,7 +124,7 @@ df[df$Period == 3 | df$Project_Performance > 0.5,c("Employee", "Boss")] # Selecc
 ```
 
 
-# SELECT, FILTER, ARRANGE
+### SELECT, FILTER, ARRANGE
 ```r
 select(df, Period, Boss, Employee) # Selecciona las columnas Period, Boss, y Employee del dataframe df
 select(df, idProject:Employee) # Selecciona las columnas desde idProject hasta Employee
@@ -114,7 +162,7 @@ subset(df, # dataframe
 ```
 
 
-# MUTATE y SUMMARISE
+### MUTATE y SUMMARISE
 ```r
 mutate(df, Nombre = Project_Performance*100) # Crea nuevas columnas
 summarise(df, Promedio = mean(Project_Performance)) # Para cálculos de tendencia central
@@ -141,7 +189,7 @@ df %>%
 ```
 
 
-# Ejercicios
+## Ejercicios prácticos
 
 1) La media simple de cada proyecto, por jefe
 2) La media simple de cada proyecto, por período
@@ -237,14 +285,14 @@ Documentación útil adicional: `?round` `?n`
 | C        |        0.14|
 
 
-# Problema
+### Problema
 
 En los últimos años la empresa ha tenido significativas ganancias, por lo que ha decidido repartir 100 millones de pesos para bonos de forma retrospectiva a jefes y empleados de forma independiente, según las siguientes condiciones:
 - Por cada período que el desempeño de un jefe o de un empleado supera el 0%, a dicho jefe o empleado se le dará un bono. 
 - El tamaño de cada bono es ponderado por el tamaño total de todos los proyectos, cuyo Project_Performance sea mayor a 0%, asociados a todos los empleados y jefes que recibirán bono. 
 - Lo máximo que puede ganar un empleado por período es 3MM y un jefe es 5MM. 
 
-### Calcule: 
+#### Calcule: 
 
 **(a)** el bono más grande de los jefes.
 
