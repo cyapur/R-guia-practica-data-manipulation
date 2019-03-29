@@ -81,7 +81,7 @@ Con el fin de entender cómo aprender y entender cómo funciona cada función de
 |Ejemplo| ¿Qué hace?|
 |:---:| :---|
 |`?select()`| Va directamente a la documentación especificada|
-|`??select()`| Realiza un buscar con la palabra o función a seguir de los signos de interrogación|
+|`??select()`| Realiza un buscar en la documentación con la palabra especificada|
 
 
 ### SLICING, FILTRAR Y SELECCIONAR
