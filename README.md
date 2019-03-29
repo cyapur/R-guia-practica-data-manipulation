@@ -1,5 +1,4 @@
 # R - Guía Básica
-# R-Basic-Guide
 
 ## Índice
 1. Conceptos básicos
@@ -8,7 +7,7 @@
 
 ## 1. Conceptos básicos
 
-### Data Structure
+### Estructura de datos
 
 En R todo es un objeto. Un objeto determinado tiene una estructura de datos determinada. La estructura de datos de cualquier lenguaje de programación define cómo se pueden representar los datos en dicho lenguaje de programación. En R, los 6 tipos básicos de estructuras de datos se pueden organizar en si son homogéneos (todos los datos deben ser del mismo tipo) o heterogéneos (los datos pueden ser de distintos tipos):
 
@@ -19,13 +18,13 @@ En R todo es un objeto. Un objeto determinado tiene una estructura de datos dete
 |n|Array|-|
 
 Los tipos de datos más comunes son:
-- logical: TRUE FALSE
-- integer: Números enteros
-- double: Números reales
-- character: Strings o texto
-- factor: Usado para datos categóricos
+- `logical`: TRUE FALSE
+- `integer`: Números enteros
+- `double`: Números reales
+- `character`: Strings o texto
+- `factor`: Usado para datos categóricos
 
-Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. Los vectores atómicos se definen con `c()` del acrónimo *concatenate*. Una lista se define por la función `list()`. Un dataframe es una lista de vectores atómicos de la misma cantidad de componentes. Un array es un objeto multidimensional de n dimensiones, una matriz es un array de dos dimensiones, y un vector atómico es una array de una dimensión. Un objeto atómico es aquel que tiene un solo tipo de dato.
+Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. Los vectores atómicos se definen con `c()` como abreviatura de *concatenate*. Una lista se define por la función `list()`. Un dataframe es una lista de vectores atómicos de la misma cantidad de componentes. Un array es un objeto multidimensional de n dimensiones, una matriz es un array de dos dimensiones, y un vector atómico es una array de una dimensión. Un objeto atómico es aquel que tiene un solo tipo de dato.
 
 Con lo que se trabajará en esta guía serán dataframe y vectores.
 
@@ -48,7 +47,7 @@ help(mean) # Va directamente a la documentación de la función mean(), equivale
 help.search(mean) # Realiza una búsqueda con con dicho string, equivale a ??mean
 ```
 
-## 2.Funciones básicas para la manipulación de datos
+## 2. Funciones básicas para la manipulación de datos
 
 Para aprender a manipular datos, comenzaremos con lo siguiente:
 ```R
@@ -100,7 +99,7 @@ df[1:3, c(1,5,2:4)] # Selecciona el rango de filas 1 a 3, las columnas 1,5, y el
 df[c(4,10,50,60,1:3), c(1,3,2,4:5)] # Selecciona las filas 4,10,50,60, el rango de filas 1 a 3, las columnas 1,3,2 y el rango de columnas 4 a 5
 df[c(1,4,3), c("Period", "Boss", "Employee")] # Selecciona la fila 1,4,3 con las columnas Period, Boss y Employee
 ```
-`c()` es la definición de un vector en R y se denota con una `c` de *concatenate*. Se pueden realizar combinaciones de selecciones de números de columnas como uno prefiera. En tanto, siendo `a` y `b` vectores con valores enteros de una misma cantidad de elementos, `df[a,b]`  extraerá las filas que indiquen el vector `a`, y las columnas que indiquen el vector `b`. 
+`c()` es la definición de un vector en R y se denota con una `c` de *concatenate*. Se pueden realizar combinaciones de selecciones de números de columnas como uno prefiera. Por tanto, siendo `a` y `b` vectores con valores enteros de una misma cantidad de elementos, `df[a,b]`  extraerá las filas que indiquen el vector `a`, y las columnas que indiquen el vector `b`. 
 
 De forma adicional, se pueden seleccionar las columnas por su nombre, así como también filtrar según determinados valores con vectores `BOOLEAN`:
 ```r
