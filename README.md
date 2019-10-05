@@ -1,14 +1,15 @@
 # R - Guía Básica
 
-## Objetivos
+## Objetivos y requisitos
 
 1) Proveer de una guía práctica de R en español para aprender manipulación de datos.
-2) 
+2) Se requiere instalar la última versión de R y de Rstudio.
 
 ## Índice
 1. Conceptos básicos
 2. Funciones básicas
-3. Ejercicios prácticos
+3. Funciones de manipulación de datos
+4. Ejercicios prácticos
 
 ## 1. Conceptos básicos
 
@@ -22,14 +23,14 @@ En R todo es un objeto. Un objeto tiene una estructura de datos determinada. La 
 |2|Matrix|Data frame|
 |n|Array|-|
 
+En esta gruía utilizaremos data frame y vectores.
+
 Los tipos de datos más comunes son:
-- `logical`: TRUE FALSE
+- `logical`: Equivalente a Boolean: TRUE FALSE
 - `integer`: Números enteros
 - `double`: Números reales
 - `character`: Strings o texto
 - `factor`: Usado para datos categóricos
-
-line from r studio
 
 Las relaciones de los conceptos anteriores son las siguientes:
 - Al evaluar la clase de un vector en R, `integer` y `double` se clasifican indistintamente como numéricos.
@@ -40,7 +41,10 @@ Las relaciones de los conceptos anteriores son las siguientes:
 - Un objeto atómico es aquel que tiene un solo tipo de dato.
 - Cada vector de un dataframe tiene un tipo de datos determinado.
 
-R tiene datasets internas, por lo que podemos utilizarlas sin cargar ni crear base de datos alguna. Por ejemplo, `iris`.
+
+## 2. Funciones básicas
+
+R tiene datasets internas, por lo que podemos utilizarlas sin cargar ni crear base de datos alguna. Aquí utilizaremos `iris` y `mtcars`.
 
 ```r
 head(iris) # Muestra las primeras 6 filas
@@ -56,6 +60,8 @@ str(iris) # Muestra la estructura de la base
  $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
+La estructura de la base `iris` tiene cuatro vectores numéricos y un vector categórico (factor). Seguimos con `mtcars`:
+
 ```r
 str(iris) # Muestra la estructura de la base
 ##'data.frame':	150 obs. of  5 variables:
@@ -65,38 +71,42 @@ str(iris) # Muestra la estructura de la base
 ## $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ## $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
+```r
+> str(iris) # Muestra la estructura de la base
+##'data.frame':	150 obs. of  5 variables:
+## $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
+## $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
+## $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
+## $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
+## $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
+```
 
-Con lo que se trabajará en esta guía serán dataframe y vectores.
-
-Para empezar, utilizaremos la base interna `mtcars`.
 ```r
 str(mtcars) # Muestra la estructura de la base
 head(mtcars) # Primeras 6 filas de la base
-mean(mtcars$mpg) # 20.09 
-sum(mtcars$cyl) # 6.19
+mean(mtcars$mpg) # Promedio de la columna mpg: 20.09 
+sum(mtcars$cyl) # Promedio de la columna cyl: 6.19
 max(c(1,2,3,4,5) # 5
 min(c(1,2,3,4,5) # 1
 mean(c(1,2,NA,4,5)) # NA
 mean(c(1,2,NA,4,5), na.rm=TRUE) # 3
 ```
-`NA` significa *Not Available*, lo que también es interpretado como un *missing value* o valores vacíos. Por regla general, en R cualquier cálculo determinado que uno quiera hacer sobre un conjunto de datos determinados, dará como resultado `NA` si es que tiene al menos un *missing value* dentro de los cálculos. Para ignorar los `NAs` hay que agregar el argumento `na.rm=TRUE` el cual significaría *NA remove = TRUE*.
+`NA` significa *Not Available*, lo que también es interpretado como un *missing value* o valores vacíos. Por regla general, en R cualquier cálculo determinado que uno quiera hacer sobre un conjunto de datos determinados, dará como resultado `NA` si es que tiene al menos un *missing value* dentro de los valores que calcula. Para ignorar los `NAs` hay que agregar el argumento `na.rm=TRUE` el cual significaría *NA remove = TRUE*.
 
-En el caso de realizar cálculos y no funcione el argumento `na.rm=TRUE` para ignorar los *missing values*, se recomienda ir a la documentación:
-```r
-help(mean) # Va directamente a la documentación de la función mean(), equivale a ?mean
-help.search(mean) # Realiza una búsqueda con con dicho string, equivale a ??mean
-```
 
 ## 2. Funciones básicas para la manipulación de datos
 
-Para aprender a manipular datos, comenzaremos con lo siguiente:
-```R
+R viene con funciones pre-instaladas por default, como las que utlizamos anteriormente. Sin embargo, las funciones que más tienden a utilizarse en R (por su eficiencia y facilidad) son externas y, en consecuencia, para poder utilizarlas se debe instalar y abrir el "paquete" que contiene dicha función. Por definición, un paquete *es una colección de funciones de R, datos, y código compilado en un formato bien definido.* El directorio donde los paquetes son guardados se llama **library**. Las funciones que utlizamos anteriormente están en los paquetes pre-instalados, y las funciones que utilizaremos ahora están en un paquete llamado `tidyverse`.
+
+```r
 install.packages("tidyverse") # Instalamos el paquete tidyverse
 library("tidyverse") # Abrimos el paquete
 df <- read.csv("df.csv", sep=";", dec=",") # Leemos la base de datos y se lo asignamos a 'df'
-
 head(df,5) # Selecciona las primeras 5 filas
-str(df) # Muestra la estructura de la base
+```
+
+```r
+str(df)
 ```
 
 **Estructura general de la base**
@@ -123,8 +133,11 @@ Con el fin de entender cómo aprender y entender cómo funciona cada función de
 |`?select()`| Va directamente a la documentación especificada|
 |`??select()`| Realiza un buscar en la documentación con la palabra especificada|
 
+`help(select)` es equivalente a `?select`..
+`help.search(select)` es equivalente a `??select`.
 
-### SLICING, FILTRAR Y SELECCIONAR
+
+### Slicing, filtrar, y seleccionar
 
 Slicing es una forma de seleccionar/filtrar un dataframe según los valores/condiciones que uno requiera, determinado por el/los índice/s de filas y columnas separados por una coma. Por ejemplo.
 ```r
@@ -137,15 +150,20 @@ df[4,2:4] # Selecciona la fila 4, y el rango de columnas 2 a 4
 df[1:4,3:5] # Selecciona el rango de filas 1 a 4, y el rango de columnas 3 a 5.
 df[1:3, c(1,5,2:4)] # Selecciona el rango de filas 1 a 3, las columnas 1,5, y el rango de rolumnas 2 a 4
 df[c(4,10,50,60,1:3), c(1,3,2,4:5)] # Selecciona las filas 4,10,50,60, el rango de filas 1 a 3, las columnas 1,3,2 y el rango de columnas 4 a 5
-df[c(1,4,3), c("Period", "Boss", "Employee")] # Selecciona la fila 1,4,3 con las columnas Period, Boss y Employee
 ```
-`c()` es la definición de un vector en R y se denota con una `c` de *concatenate*. Se pueden realizar combinaciones de selecciones de números de columnas como uno prefiera. Por tanto, siendo `a` y `b` vectores con valores enteros de una misma cantidad de elementos, `df[a,b]`  extraerá las filas que indiquen el vector `a`, y las columnas que indiquen el vector `b`. 
+`c()` es la definición de un vector en R y se denota con una `c` de *concatenate*. En R, se pueden realizar combinaciones de selecciones de números de columnas como uno prefiera. Por tanto, siendo `a` y `b` vectores de una misma cantidad de elementos de números enteros, `df[a,b]`  extraerá las filas que indiquen los números enteros del vector `a`, y las columnas que indiquen los números enteros del vector `b`. 
 
-De forma adicional, se pueden seleccionar las columnas por su nombre, así como también filtrar según determinados valores con vectores `BOOLEAN`:
+
+Las columnas, además de su posición, también se pueden seleccionar por su nombre:
+```r
+df[c(1,4,3), c("Period", "Boss", "Employee")] # Selecciona las filas 1,4,3 con las columnas Period, Boss y Employee
+```
+
+Además, se pueden filtrar los valores de las columnas (las filas) según determinados valores con vectores `BOOLEAN`. Un vector `BOOLEAN` es el resultado de una o más condiciones:
 ```r
 df$Period # Seleccionamos el vector Period del dataframe df
-df$Period == 3 # Si Period es igual a 3 retornará TRUE, y FALSE en caso contrario.
-x <- df$Period # Asignamos dicho vector x 
+df$Period == 3 # Si los valores del vector Period son igual a 3 retornará TRUE, y FALSE en caso contrario.
+x <- df$Period == 3 # Asignamos dicho vector a x 
 df[x,] # Selecciona todas las filas donde el vector x sea TRUE
 df[df$Period == 3,] # Equivalente a df[x,]
 
@@ -154,7 +172,7 @@ df$Project_Performance > 0.5 # Si el Performance del proyecto es mayor a 0.5 ret
 df[df$Project_Performance > 0.5,] # Selecciona todas las filas donde se cumpla la condición correspondiente
 
 df[df$Period == 3 & df$Project_Performance > 0.5,] # Selecciona todas las filas donde el Period == 3 Y que el Performance del proyecto sea mayor a 0.5
-df[df$Period == 3 & df$Project_Performance > 0.5,c("Employee")] # Selecciona todos los ids de los empleados que durante el período 3 hayan tenido un performance mayor a 0.5 en su proyecto
+df[df$Period == 3 & df$Project_Performance > 0.5,c("Employee")] # Selecciona todos los empleados que durante el período 3 hayan tenido un performance mayor a 0.5 en su proyecto
 
 df[df$Period == 3 | df$Project_Performance > 0.5,] # Selecciona todas las filas donde el Period == 3 Ó que el Performance del proyecto sea mayor a 0.5
 df[df$Period == 3 | df$Project_Performance > 0.5,c("Employee", "Boss")] # Selecciona todos los ids de los empleados, y su jefe respectivo, que hayan tenido algún proyecto durante el período 3 ó que hayan tenido un performance mayor a 0.5 en cualquier período
@@ -163,7 +181,7 @@ df[df$Period == 3 | df$Project_Performance > 0.5,c("Employee", "Boss")] # Selecc
 ```
 
 
-### SELECT, FILTER, ARRANGE
+### select(), filter(), arrange()
 ```r
 select(df, Period, Boss, Employee) # Selecciona las columnas Period, Boss, y Employee del dataframe df
 select(df, idProject:Employee) # Selecciona las columnas desde idProject hasta Employee
@@ -201,11 +219,11 @@ subset(df, # dataframe
 ```
 
 
-### MUTATE y SUMMARISE
+### mutate() y summarise()
 ```r
 mutate(df, Nombre = Project_Performance*100) # Crea nuevas columnas
 summarise(df, Promedio = mean(Project_Performance)) # Para cálculos de tendencia central
-#NOTA: summarise() <> summarize()
+#NOTA: summarise() es distinto a summarize()
 
 
 summarise(group_by(df, Employee),Promedio = mean(Project_Performance)) # Promedio por empleado
@@ -344,7 +362,6 @@ En los últimos años la empresa ha tenido significativas ganancias, por lo que 
 
 **Consideraciones:** Si un proyecto tiene un tamaño de 100, tiene un Project_Performance mayor a 0%, y el jefe y empleado asociados a dicho proyecto recibirán bono por dicho proyecto, al total del ponderado se le suma 200 (100 por el empleado y 100 por el jefe).
 
-Documentación adicional útil: `?merge`
 
 
 #### (a):

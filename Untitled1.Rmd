@@ -13,9 +13,19 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-head(iris)
+```{r}
+install.packages("tidyverse") # Instalamos el paquete tidyverse
+library("tidyverse") # Abrimos el paquete
+df <- read.csv("df.csv", sep=";", dec=",") # Leemos la base de datos y se lo asignamos a 'df'
+head(df,5) # Selecciona las primeras 5 filas
 ```
+
+
+```{r}
+x <- df$Period == 3
+```
+
+
 
 ## Including Plots
 
