@@ -30,7 +30,7 @@ Los tipos de datos más comunes son:
 - `factor`: Usado para datos categóricos
 
 Las relaciones de los conceptos anteriores son las siguientes:
-- Al evaluar la clase de un vector en R, `integer` y `double` se utilizan indistintamente como numéricos.
+- Al evaluar la clase de un vector en R, `integer` y `double` se clasifican indistintamente como numéricos.
 - Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. 
 - Los vectores atómicos se definen con `c()` como abreviatura de *concatenate*. Una lista se define por la función `list()`. 
 - Un dataframe es una lista de vectores atómicos de la misma cantidad de elementos. 
@@ -40,10 +40,12 @@ Las relaciones de los conceptos anteriores son las siguientes:
 
 R tiene datasets internas, por lo que podemos utilizarlas sin cargar ni crear base de datos alguna. Por ejemplo, `iris`.
 ```r
-head(iris) # Muestra la 
-str(mtcars) # Muestra la estructura de la base
+head(iris) # Muestra las primeras 6 filas
 ```
 
+```r
+str(iris) # Muestra la estructura de la base
+```
 
 Con lo que se trabajará en esta guía serán dataframe y vectores.
 
