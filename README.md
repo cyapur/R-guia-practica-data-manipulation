@@ -29,6 +29,8 @@ Los tipos de datos más comunes son:
 - `character`: Strings o texto
 - `factor`: Usado para datos categóricos
 
+line from r studio
+
 Las relaciones de los conceptos anteriores son las siguientes:
 - Al evaluar la clase de un vector en R, `integer` y `double` se clasifican indistintamente como numéricos.
 - Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. 
@@ -39,6 +41,7 @@ Las relaciones de los conceptos anteriores son las siguientes:
 - Cada vector de un dataframe tiene un tipo de datos determinado.
 
 R tiene datasets internas, por lo que podemos utilizarlas sin cargar ni crear base de datos alguna. Por ejemplo, `iris`.
+
 ```r
 head(iris) # Muestra las primeras 6 filas
 ```
