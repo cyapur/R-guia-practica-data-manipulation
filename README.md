@@ -52,18 +52,6 @@ head(iris) # Muestra las primeras 6 filas
 
 ```r
 str(iris) # Muestra la estructura de la base
-'data.frame':	150 obs. of  5 variables:
- $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
- $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
- $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
- $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
- $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
-```
-
-La estructura de la base `iris` tiene cuatro vectores numéricos y un vector categórico (factor). Seguimos con `mtcars`:
-
-```r
-str(iris) # Muestra la estructura de la base
 ##'data.frame':	150 obs. of  5 variables:
 ## $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ## $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
@@ -71,15 +59,7 @@ str(iris) # Muestra la estructura de la base
 ## $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ## $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
 ```
-```r
-> str(iris) # Muestra la estructura de la base
-##'data.frame':	150 obs. of  5 variables:
-## $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
-## $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
-## $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
-## $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
-## $ Species     : Factor w/ 3 levels "setosa","versicolor",..: 1 1 1 1 1 1 1 1 1 1 ...
-```
+Podemos ver que la estructura de la base `iris` tiene cuatro vectores numéricos y un vector categórico (factor). Seguimos con la base `mtcars`:
 
 ```r
 str(mtcars) # Muestra la estructura de la base
@@ -94,7 +74,7 @@ mean(c(1,2,NA,4,5), na.rm=TRUE) # 3
 `NA` significa *Not Available*, lo que también es interpretado como un *missing value* o valores vacíos. Por regla general, en R cualquier cálculo determinado que uno quiera hacer sobre un conjunto de datos determinados, dará como resultado `NA` si es que tiene al menos un *missing value* dentro de los valores que calcula. Para ignorar los `NAs` hay que agregar el argumento `na.rm=TRUE` el cual significaría *NA remove = TRUE*.
 
 
-## 2. Funciones básicas para la manipulación de datos
+## 3. Funciones básicas para la manipulación de datos
 
 R viene con funciones pre-instaladas por default, como las que utlizamos anteriormente. Sin embargo, las funciones que más tienden a utilizarse en R (por su eficiencia y facilidad) son externas y, en consecuencia, para poder utilizarlas se debe instalar y abrir el "paquete" que contiene dicha función. Por definición, un paquete *es una colección de funciones de R, datos, y código compilado en un formato bien definido.* El directorio donde los paquetes son guardados se llama **library**. Las funciones que utlizamos anteriormente están en los paquetes pre-instalados, y las funciones que utilizaremos ahora están en un paquete llamado `tidyverse`.
 
@@ -107,6 +87,14 @@ head(df,5) # Selecciona las primeras 5 filas
 
 ```r
 str(df)
+##'data.frame':	100 obs. of  7 variables:
+## $ Employee           : int  1 1 1 1 1 1 1 1 2 2 ...
+## $ idProject          : int  9 83 96 20 48 27 28 49 89 58 ...
+## $ ProjectType        : Factor w/ 3 levels "X","Y","Z": 2 3 2 3 3 3 3 1 1 1 ...
+## $ Period             : int  1 5 2 5 1 5 5 1 2 4 ...
+## $ Project_Performance: num  0.2 -0.2 0.02 0.54 0.92 0.58 0.03 -0.04 0.95 -0.53 ...
+## $ Project_Size       : int  861 996 622 796 418 277 995 693 670 671 ...
+## $ Boss               : Factor w/ 3 levels "A","B","C": 1 1 1 1 1 1 1 1 1 1 ...
 ```
 
 **Estructura general de la base**
@@ -246,8 +234,9 @@ df %>%
 ```
 
 
-## Ejercicios prácticos
+## 4. Ejercicios prácticos
 
+Calcule:
 1) La media simple de cada proyecto, por jefe
 2) La media simple de cada proyecto, por período
 3) La media simple de los proyectos tipo X
