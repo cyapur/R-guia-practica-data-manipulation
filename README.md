@@ -1,5 +1,10 @@
 # R - Guía Básica
 
+## Objetivos
+
+1) Proveer de una guía práctica de R en español para aprender manipulación de datos.
+2) 
+
 ## Índice
 1. Conceptos básicos
 2. Funciones básicas
@@ -9,7 +14,7 @@
 
 ### Estructura de datos
 
-En R todo es un objeto. Un objeto determinado tiene una estructura de datos determinada. La estructura de datos de cualquier lenguaje de programación define cómo se pueden representar los datos en dicho lenguaje de programación. En R, los 6 tipos básicos de estructuras de datos se pueden organizar en si son homogéneos (todos los datos deben ser del mismo tipo) o heterogéneos (los datos pueden ser de distintos tipos):
+En R todo es un objeto. Un objeto tiene una estructura de datos determinada. La estructura de datos de cualquier lenguaje de programación define cómo se pueden representar los datos en dicho lenguaje de programación. En R, los 6 tipos básicos de estructuras de datos se pueden organizar en si son homogéneos (todos los datos deben ser del mismo tipo) o heterogéneos (los datos pueden ser de distintos tipos) y, a su vez, cada tipo de datos pertenecerá una dimensionalidad determinada:
 
 |Dimensionalidad|Homogéneos|Heterogéneos|
 |:---:|:---:|:---:|
@@ -24,7 +29,21 @@ Los tipos de datos más comunes son:
 - `character`: Strings o texto
 - `factor`: Usado para datos categóricos
 
-Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. Los vectores atómicos se definen con `c()` como abreviatura de *concatenate*. Una lista se define por la función `list()`. Un dataframe es una lista de vectores atómicos de la misma cantidad de componentes. Un array es un objeto multidimensional de n dimensiones, una matriz es un array de dos dimensiones, y un vector atómico es una array de una dimensión. Un objeto atómico es aquel que tiene un solo tipo de dato.
+Las relaciones de los conceptos anteriores son las siguientes:
+- Al evaluar la clase de un vector en R, `integer` y `double` se utilizan indistintamente como numéricos.
+- Un vector (1 dimensión) puede ser un vector atómico o una lista, aunque comúnmente se refiere a un vector atómico. 
+- Los vectores atómicos se definen con `c()` como abreviatura de *concatenate*. Una lista se define por la función `list()`. 
+- Un dataframe es una lista de vectores atómicos de la misma cantidad de elementos. 
+- Un array es un objeto multidimensional de n dimensiones, una matriz es un array de dos dimensiones, y un vector atómico es una array de una dimensión. 
+- Un objeto atómico es aquel que tiene un solo tipo de dato.
+- Cada vector de un dataframe tiene un tipo de datos determinado.
+
+R tiene datasets internas, por lo que podemos utilizarlas sin cargar ni crear base de datos alguna. Por ejemplo, `iris`.
+```r
+head(iris) # Muestra la 
+str(mtcars) # Muestra la estructura de la base
+```
+
 
 Con lo que se trabajará en esta guía serán dataframe y vectores.
 
